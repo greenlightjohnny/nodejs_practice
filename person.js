@@ -1,3 +1,5 @@
+console.log(__filename);
+
 class Person {
   constructor(name, age) {
     this.name = name;
