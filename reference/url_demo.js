@@ -33,4 +33,6 @@ console.log(myUrl.searchParams);
 
 // Loop through params
 myUrl.searchParams.forEach((value, name) => console.log(`${name}: ${value}`));
-// Returns
+// Returns id: 100
+// status: active
+// abc: 123
