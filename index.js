@@ -5,8 +5,15 @@ const fs = require("fs");
 //Creating the server
 const server = http.createServer((req, res) => {
   if (req.url === "/") {
-    res.writeHead(200, { "Content-Type": "text/html" });
-    res.end("<h1>HOME<h1>");
+    ///readFile asynchronously reads the entire contents of a file. Takes in a file path, options, and a callback function. The callback function takes in (err, data). Err is an error, and data is the contents of the file. Does not have to be called data, in this case it is labeled content
+    fs.readFile(
+      path.join(__dirname, "public", "index.html"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(content);
+      }
+    );
   }
 });
 
