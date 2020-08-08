@@ -8,4 +8,27 @@ console.log(path.basename(__filename));
 
 // Directory name
 console.log(path.dirname(__filename));
-///
+/// Returns /home/lost/showcase/nodepractice/reference
+
+// File extension
+console.log(path.extname(__filename));
+// Returns .js
+
+// Create path object
+console.log(path.parse(__filename));
+// Returns an object:
+// {
+//   root: '/',
+//   dir: '/home/lost/showcase/nodepractice/reference',
+//   base: 'path_demo.js',
+//   ext: '.js',
+//   name: 'path_demo'
+// }
+
+// Access parse object
+console.log(path.parse(__filename).base);
+// Returns path_demo.js
+
+// Concatenate paths
+
+console.log(path.join(__dirname, "test", "hello.html"));
