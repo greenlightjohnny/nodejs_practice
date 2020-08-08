@@ -32,3 +32,4 @@ console.log(path.parse(__filename).base);
 // Concatenate paths
 
 console.log(path.join(__dirname, "test", "hello.html"));
+// Returns /home/lost/showcase/nodepractice/reference/test/hello.html
