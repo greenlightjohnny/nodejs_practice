@@ -43,11 +43,16 @@ const server = http.createServer((req, res) => {
   let filePath = path.join(
     __dirname,
     "public",
-    req.url === "/" ? "index.html" : req.url
+    req.url === "/" ? "index.html" : req.url + ".html"
   );
+  console.log(
+    "$$$$$$$$",
 
+    req.url
+  );
   // Extension of file
   let extname = path.extname(filePath);
+  console.log("$$$$ext", extname);
 
   // Initial contact type
   let contentType = "text/html";
@@ -73,13 +78,15 @@ const server = http.createServer((req, res) => {
 
   /// Read File
   fs.readFile(filePath, (err, content) => {
+    console.log("##filecont", filePath);
     if (err) {
       if ((err.code = "EN0ENT")) {
         //// page not found, error that EN0NET means
+        console.log("%%% really not found?");
         fs.readFile(
           path.join(__dirname, "public", "404.html"),
           (err, content) => {
-            res.writeHead(200, { "Content=Type": "text/html" });
+            res.writeHead(200, { "Content-Type": "text/html" });
             res.end(content, "utf8");
           }
         );
