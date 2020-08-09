@@ -43,13 +43,9 @@ const server = http.createServer((req, res) => {
   let filePath = path.join(
     __dirname,
     "public",
-    req.url === "/" ? "index.html" : req.url + ".html"
+    req.url === "/" ? "index.html" : req.url
   );
-  console.log(
-    "$$$$$$$$",
 
-    req.url
-  );
   // Extension of file
   let extname = path.extname(filePath);
   console.log("$$$$ext", extname);
